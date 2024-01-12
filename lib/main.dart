@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:sanq_viewer/src/setting/setting_service.dart';
 
-void main() {
+void main() async {
+  final settingController = SettingController(SettingService());
+  await settingController.load();
   runApp(const MainApp());
 }
 
