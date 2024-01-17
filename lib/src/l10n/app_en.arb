@@ -1,3 +1,17 @@
 {
-    "appTitle": "SanQViewer"
+  "errMsgThisFieldIsRequired": "This field is required",
+  "errMsgThisIsNotUrlFormat": "This is not URL format",
+  "startWizardViewInputYourBaseUrl": "Input your base url",
+  "startWizardViewSelectApplicationTheme": "Select your theme",
+  "startWizardViewSelectYourLanguage": "Select your language",
+  "wordAppTitle": "SanQViewer",
+  "wordChinese": "Chinese",
+  "wordDarkTheme": "Dark",
+  "wordEnglish": "English",
+  "wordJapanese": "Japanese",
+  "wordKorean": "Korean",
+  "wordLightTheme": "Light",
+  "wordSave": "Save",
+  "wordSubmit": "Submit",
+  "wordSystemTheme": "System"
 }

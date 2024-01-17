@@ -1,3 +1,17 @@
 {
-    "appTitle": "SanQViewer"
+  "errMsgThisFieldIsRequired": "此字段是必需的",
+  "errMsgThisIsNotUrlFormat": "这不是URL格式",
+  "startWizardViewInputYourBaseUrl": "输入您的基本网址",
+  "startWizardViewSelectApplicationTheme": "选择您的主题",
+  "startWizardViewSelectYourLanguage": "选择你的语言",
+  "wordAppTitle": "SanQViewer",
+  "wordChinese": "中国語",
+  "wordDarkTheme": "黑暗主题",
+  "wordEnglish": "英語",
+  "wordJapanese": "日本語",
+  "wordKorean": "韓国語",
+  "wordLightTheme": "浅色主题",
+  "wordSave": "保存",
+  "wordSubmit": "保存",
+  "wordSystemTheme": "取决于系统设置"
 }

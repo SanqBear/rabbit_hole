@@ -1,3 +1,17 @@
 {
-    "appTitle": "SanQViewer"
+  "errMsgThisFieldIsRequired": "この項目は必須です",
+  "errMsgThisIsNotUrlFormat": "これはURL形式ではありません",
+  "startWizardViewInputYourBaseUrl": "ベース URL を入力してください",
+  "startWizardViewSelectApplicationTheme": "テーマを選択してください",
+  "startWizardViewSelectYourLanguage": "あなたが使う言語を選んでください",
+  "wordAppTitle": "SanQViewer",
+  "wordChinese": "中国語",
+  "wordDarkTheme": "暗い",
+  "wordEnglish": "英語",
+  "wordJapanese": "日本語",
+  "wordKorean": "韓国語",
+  "wordLightTheme": "明るい",
+  "wordSave": "保存",
+  "wordSubmit": "保存",
+  "wordSystemTheme": "システム設定に従う"
 }
