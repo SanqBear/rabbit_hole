@@ -9,15 +9,18 @@ class SettingController with ChangeNotifier {
   late ThemeMode _themeMode;
   late String _locale;
   late String _baseUrl;
+  late bool _isFirstRun;
 
   ThemeMode get themeMode => _themeMode;
   String get locale => _locale;
   String get baseUrl => _baseUrl;
+  bool get isFirstRun => _isFirstRun;
 
   Future<void> load() async {
     _themeMode = await _settingService.themeMode();
     _locale = await _settingService.locale();
     _baseUrl = await _settingService.baseUrl();
+    _isFirstRun = await _settingService.isFirstRun();
     notifyListeners();
   }
 
@@ -36,6 +39,12 @@ class SettingController with ChangeNotifier {
   Future<void> updateBaseUrl(String baseUrl) async {
     await _settingService.updateBaseUrl(baseUrl);
     _baseUrl = baseUrl;
+    notifyListeners();
+  }
+
+  Future<void> updateIsFirstRun(bool isFirstRun) async {
+    await _settingService.updateIsFirstRun(isFirstRun);
+    _isFirstRun = isFirstRun;
     notifyListeners();
   }
 }

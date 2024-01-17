@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'package:sanq_viewer/src/setting/setting_controller.dart';
+import 'package:sanq_viewer/src/start/start_wizard_view.dart';
 
 class App extends StatelessWidget {
   const App({
@@ -23,11 +25,26 @@ class App extends StatelessWidget {
           darkTheme: ThemeData.dark(),
           themeMode: settingController.themeMode,
           localizationsDelegates: const [
+            AppLocalizations.delegate,
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
           ],
           locale: Locale(settingController.locale),
+          supportedLocales: const [
+            Locale('en', 'en-US'),
+            Locale('ja', 'ja-JP'),
+            Locale('ko', 'ko-KR'),
+            Locale('zh', 'zh-CN'),
+          ],
+          onGenerateRoute: (RouteSettings routeSettings) {
+            return MaterialPageRoute<void>(
+              settings: routeSettings,
+              builder: (BuildContext context) {
+                return StartWizardView(settingController: settingController);
+              }
+            );
+          }
         );
       }
     );
