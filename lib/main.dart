@@ -7,15 +7,15 @@ import 'package:sanq_viewer/src/app.dart';
 import 'package:sanq_viewer/src/setting/setting_controller.dart';
 import 'package:sanq_viewer/src/setting/setting_service.dart';
 
-
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  FlutterError.onError = (details) => log(details.exceptionAsString(), stackTrace: details.stack);
+  FlutterError.onError =
+      (details) => log(details.exceptionAsString(), stackTrace: details.stack);
 
-  final SharedPreferences preferences =
-      await SharedPreferences.getInstance();
+  final SharedPreferences preferences = await SharedPreferences.getInstance();
 
-  final settingController = SettingController(SettingService(preferences: preferences));
+  final settingController =
+      SettingController(SettingService(preferences: preferences));
   await settingController.load();
 
   runApp(App(settingController: settingController));

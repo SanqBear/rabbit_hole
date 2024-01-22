@@ -42,7 +42,6 @@ class SettingService {
     return true;
   }
 
-
   Future<void> updateThemeMode(ThemeMode themeMode) async {
     await preferences.setInt("themeMode", themeMode.index);
   }
