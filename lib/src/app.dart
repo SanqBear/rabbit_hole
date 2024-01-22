@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:sanq_viewer/src/home/home_view.dart';
 
 import 'package:sanq_viewer/src/setting/setting_controller.dart';
 import 'package:sanq_viewer/src/start/start_wizard_view.dart';
@@ -41,7 +42,12 @@ class App extends StatelessWidget {
             return MaterialPageRoute<void>(
               settings: routeSettings,
               builder: (BuildContext context) {
-                return StartWizardView(settingController: settingController);
+                if(settingController.isFirstRun) {
+                  return StartWizardView(settingController: settingController);
+                }
+                else {
+                  return const HomeView();
+                }
               }
             );
           }
