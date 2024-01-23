@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:sanq_viewer/src/setting/setting_controller.dart';
 import 'package:sanq_viewer/src/api/api_test.dart';
 
-class TestView extends StatelessWidget {
+class TestPage extends StatelessWidget {
   static const String routeName = "/test";
-  const TestView({super.key, required this.settingController});
+  const TestPage({super.key, required this.settingController});
 
   final SettingController settingController;
 

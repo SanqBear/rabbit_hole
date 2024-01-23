@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:sanq_viewer/src/view/home/home_view.dart';
-import 'package:sanq_viewer/src/test/test_view.dart';
+import 'package:sanq_viewer/src/home/home_page.dart';
+import 'package:sanq_viewer/src/test/test_page.dart';
 
 import 'package:sanq_viewer/src/setting/setting_controller.dart';
-import 'package:sanq_viewer/src/view/firstrun/firstrun_wizard_view.dart';
+import 'package:sanq_viewer/src/firstrun/firstrun_wizard_view.dart';
 
 class App extends StatelessWidget {
   const App({required this.settingController, super.key});
@@ -44,14 +44,12 @@ class App extends StatelessWidget {
                             settingController: settingController);
                       } else {
                         switch (routeSettings.name) {
-                          case TestView.routeName:
-                            return TestView(
+                          case TestPage.routeName:
+                            return TestPage(
                                 settingController: settingController);
-                          case HomeView.routeName:
+                          case HomePage.routeName:
                           default:
-                            return HomeView(
-                              settingController: settingController,
-                            );
+                            return const HomeView();
                         }
                       }
                     });
