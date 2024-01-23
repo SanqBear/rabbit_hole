@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:sanq_viewer/util/device_size.dart';
 import 'package:validators/validators.dart';
 
 import 'package:sanq_viewer/src/setting/setting_controller.dart';
@@ -65,6 +66,9 @@ class LocaleSettingWizard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    DeviceSize deviceSize = DeviceSize(context);
+    deviceSize.init();
+
     return Container(
       alignment: Alignment.center,
       child: Row(
@@ -75,7 +79,10 @@ class LocaleSettingWizard extends StatelessWidget {
             onPressed: null,
             // nothing to do. this is first page.
           ),
-          SizedBox(width: MediaQuery.of(context).size.width * 0.05),
+          SizedBox(
+              width: deviceSize.aspectRatio > 1
+                  ? deviceSize.width * 0.05
+                  : deviceSize.width * 0.03),
           Container(
               alignment: Alignment.centerLeft,
               child: Column(
@@ -88,17 +95,16 @@ class LocaleSettingWizard extends StatelessWidget {
                         children: [
                           Text(AppLocalizations.of(context)!
                               .startWizardViewSelectYourLanguage),
-                          SizedBox(
-                              height:
-                                  MediaQuery.of(context).size.height * 0.03),
+                          SizedBox(height: deviceSize.height * 0.03),
                           Container(
                               alignment: Alignment.centerLeft,
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   SizedBox(
-                                    width: MediaQuery.of(context).size.width *
-                                        0.09,
+                                    width: deviceSize.aspectRatio > 1
+                                        ? deviceSize.width * 0.09
+                                        : deviceSize.width * 0.28,
                                     child: ElevatedButton(
                                       onPressed: () => {
                                         confirmEventHandler("en"),
@@ -108,11 +114,13 @@ class LocaleSettingWizard extends StatelessWidget {
                                     ),
                                   ),
                                   SizedBox(
-                                      width: MediaQuery.of(context).size.width *
-                                          0.01),
+                                      width: deviceSize.aspectRatio > 1
+                                          ? deviceSize.width * 0.01
+                                          : deviceSize.width * 0.025),
                                   SizedBox(
-                                    width: MediaQuery.of(context).size.width *
-                                        0.09,
+                                    width: deviceSize.aspectRatio > 1
+                                        ? deviceSize.width * 0.09
+                                        : deviceSize.width * 0.28,
                                     child: ElevatedButton(
                                         onPressed: () => {
                                               confirmEventHandler("ko"),
@@ -124,16 +132,18 @@ class LocaleSettingWizard extends StatelessWidget {
                                 ],
                               )),
                           SizedBox(
-                              height:
-                                  MediaQuery.of(context).size.height * 0.02),
+                              height: deviceSize.aspectRatio > 1
+                                  ? deviceSize.height * 0.02
+                                  : deviceSize.height * 0.005),
                           Container(
                               alignment: Alignment.center,
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   SizedBox(
-                                    width: MediaQuery.of(context).size.width *
-                                        0.09,
+                                    width: deviceSize.aspectRatio > 1
+                                        ? deviceSize.width * 0.09
+                                        : deviceSize.width * 0.28,
                                     child: ElevatedButton(
                                         onPressed: () => {
                                               confirmEventHandler("ja"),
@@ -143,11 +153,13 @@ class LocaleSettingWizard extends StatelessWidget {
                                                 .wordJapanese)),
                                   ),
                                   SizedBox(
-                                      width: MediaQuery.of(context).size.width *
-                                          0.01),
+                                      width: deviceSize.aspectRatio > 1
+                                          ? deviceSize.width * 0.01
+                                          : deviceSize.width * 0.025),
                                   SizedBox(
-                                    width: MediaQuery.of(context).size.width *
-                                        0.09,
+                                    width: deviceSize.aspectRatio > 1
+                                        ? deviceSize.width * 0.09
+                                        : deviceSize.width * 0.28,
                                     child: ElevatedButton(
                                         onPressed: () => {
                                               confirmEventHandler("zh"),
@@ -162,7 +174,10 @@ class LocaleSettingWizard extends StatelessWidget {
                       ))
                 ],
               )),
-          SizedBox(width: MediaQuery.of(context).size.width * 0.05),
+          SizedBox(
+              width: deviceSize.aspectRatio > 1
+                  ? deviceSize.width * 0.05
+                  : deviceSize.width * 0.03),
           IconButton(
               icon: const Icon(Icons.navigate_next),
               onPressed: () => {moveToNextHandler()}),
@@ -185,6 +200,9 @@ class ThemeModeSettingWizard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    DeviceSize deviceSize = DeviceSize(context);
+    deviceSize.init();
+
     return Container(
       alignment: Alignment.center,
       child: Row(
@@ -197,7 +215,10 @@ class ThemeModeSettingWizard extends StatelessWidget {
             },
             // nothing to do. this is first page.
           ),
-          SizedBox(width: MediaQuery.of(context).size.width * 0.05),
+          SizedBox(
+              width: deviceSize.aspectRatio > 1
+                  ? deviceSize.width * 0.05
+                  : deviceSize.width * 0.07),
           Container(
             alignment: Alignment.center,
             child: Column(
@@ -209,10 +230,11 @@ class ThemeModeSettingWizard extends StatelessWidget {
                       children: [
                         Text(AppLocalizations.of(context)!
                             .startWizardViewSelectApplicationTheme),
+                        SizedBox(height: deviceSize.height * 0.02),
                         SizedBox(
-                            height: MediaQuery.of(context).size.height * 0.02),
-                        SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.2,
+                          width: deviceSize.aspectRatio > 1
+                              ? deviceSize.width * 0.2
+                              : deviceSize.width * 0.5,
                           child: ElevatedButton(
                               onPressed: () =>
                                   confirmEventHandler(ThemeMode.system),
@@ -220,9 +242,13 @@ class ThemeModeSettingWizard extends StatelessWidget {
                                   .wordSystemTheme)),
                         ),
                         SizedBox(
-                            height: MediaQuery.of(context).size.height * 0.01),
+                            height: deviceSize.aspectRatio > 1
+                                ? deviceSize.height * 0.01
+                                : deviceSize.height * 0.005),
                         SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.2,
+                          width: deviceSize.aspectRatio > 1
+                              ? deviceSize.width * 0.2
+                              : deviceSize.width * 0.5,
                           child: ElevatedButton(
                               onPressed: () =>
                                   confirmEventHandler(ThemeMode.light),
@@ -230,9 +256,13 @@ class ThemeModeSettingWizard extends StatelessWidget {
                                   .wordLightTheme)),
                         ),
                         SizedBox(
-                            height: MediaQuery.of(context).size.height * 0.01),
+                            height: deviceSize.aspectRatio > 1
+                                ? deviceSize.height * 0.01
+                                : deviceSize.height * 0.005),
                         SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.2,
+                          width: deviceSize.aspectRatio > 1
+                              ? deviceSize.width * 0.2
+                              : deviceSize.width * 0.5,
                           child: ElevatedButton(
                               onPressed: () =>
                                   confirmEventHandler(ThemeMode.dark),
@@ -244,7 +274,10 @@ class ThemeModeSettingWizard extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(width: MediaQuery.of(context).size.width * 0.05),
+          SizedBox(
+              width: deviceSize.aspectRatio > 1
+                  ? deviceSize.width * 0.05
+                  : deviceSize.width * 0.07),
           IconButton(
               icon: const Icon(Icons.navigate_next),
               onPressed: () => {moveToNextHandler()}),
@@ -275,20 +308,22 @@ class _BaseUrlSettingWizardState extends State<BaseUrlSettingWizard> {
 
   @override
   Widget build(BuildContext context) {
+    DeviceSize deviceSize = DeviceSize(context);
+    deviceSize.init();
+
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
             margin: EdgeInsets.only(
-                left: MediaQuery.of(context).size.width * 0.05,
-                right: MediaQuery.of(context).size.width * 0.05),
+                left: deviceSize.width * 0.05, right: deviceSize.width * 0.05),
             alignment: Alignment.center,
             child: Form(
                 key: _formKey,
                 child: Column(children: [
                   Text(AppLocalizations.of(context)!
                       .startWizardViewInputYourBaseUrl),
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.01),
+                  SizedBox(height: deviceSize.height * 0.01),
                   TextFormField(
                     controller: _inputController,
                     decoration: const InputDecoration(
@@ -306,7 +341,7 @@ class _BaseUrlSettingWizardState extends State<BaseUrlSettingWizard> {
                       return null;
                     },
                   ),
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.01),
+                  SizedBox(height: deviceSize.height * 0.01),
                   Container(
                     alignment: Alignment.center,
                     child: Row(
@@ -333,8 +368,7 @@ class _BaseUrlSettingWizardState extends State<BaseUrlSettingWizard> {
                                 },
                             child:
                                 Text(AppLocalizations.of(context)!.wordSubmit)),
-                        SizedBox(
-                            width: MediaQuery.of(context).size.width * 0.01),
+                        SizedBox(width: deviceSize.width * 0.01),
                         ElevatedButton(
                             onPressed: () => {
                                   widget.moveToBeforeHandler(),

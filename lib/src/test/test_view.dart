@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:sanq_viewer/src/setting/setting_controller.dart';
-import 'package:sanq_viewer/src/api/api_base.dart';
+import 'package:sanq_viewer/src/api/api_test.dart';
 
 class TestView extends StatelessWidget {
   static const String routeName = "/test";
