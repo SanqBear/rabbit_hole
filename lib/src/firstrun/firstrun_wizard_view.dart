@@ -4,17 +4,16 @@ import 'package:validators/validators.dart';
 
 import 'package:sanq_viewer/src/setting/setting_controller.dart';
 
-class StartWizardView extends StatefulWidget {
-  const StartWizardView({required this.settingController, super.key});
+class FirstrunWizardView extends StatefulWidget {
+  const FirstrunWizardView({required this.settingController, super.key});
 
   final SettingController settingController;
 
   @override
-  State<StartWizardView> createState() => _StartWizardViewState();
+  State<FirstrunWizardView> createState() => _FirstRunWizardState();
 }
 
-class _StartWizardViewState extends State<StartWizardView> {
-  List<String> propertyNames = ["locale", "themeMode", "baseUrl"];
+class _FirstRunWizardState extends State<FirstrunWizardView> {
   int idx = 0;
 
   @override

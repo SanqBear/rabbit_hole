@@ -33,6 +33,15 @@ class SettingService {
     return '';
   }
 
+  Future<String> apiUrl() async {
+    final apiUrl = preferences.getString("apiUrl");
+    if (apiUrl != null) {
+      return apiUrl;
+    }
+
+    return '';
+  }
+
   Future<bool> isFirstRun() async {
     final isFirstRun = preferences.getBool("isFirstRunFlag");
     if (isFirstRun != null) {
@@ -52,6 +61,10 @@ class SettingService {
 
   Future<void> updateBaseUrl(String baseUrl) async {
     await preferences.setString("baseUrl", baseUrl);
+  }
+
+  Future<void> updateApiUrl(String apiUrl) async {
+    await preferences.setString("apiUrl", apiUrl);
   }
 
   Future<void> updateIsFirstRun(bool isFirstRun) async {
