@@ -1,6 +1,6 @@
 {
-    "name": "sanq_viewer",
-    "short_name": "sanq_viewer",
+    "name": "rabbit_playground",
+    "short_name": "rabbit_playground",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
