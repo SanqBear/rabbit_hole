@@ -1,6 +1,6 @@
 {
-    "name": "rabbit_playground",
-    "short_name": "rabbit_playground",
+    "name": "rabbit_hole",
+    "short_name": "rabbit_hole",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

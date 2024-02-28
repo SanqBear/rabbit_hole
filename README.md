@@ -1,4 +1,4 @@
-# rabbit_playground
+# rabbit_hole
 
 A new Flutter project.
 
