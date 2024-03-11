@@ -23,8 +23,9 @@ class SettingsService {
     await _sharedPreferences.setInt('themeMode', theme.index);
   }
 
-  Future<void> updateApiUrl(String apiUrl) async {
+  Future<void> updateApiUrl(String url) async {
     // Use the shared_preferences package to persist settings locally or the
     // http package to persist settings over the network.
+    await _sharedPreferences.setString('apiUrl', url);
   }
 }
