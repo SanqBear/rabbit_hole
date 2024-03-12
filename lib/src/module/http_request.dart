@@ -22,6 +22,14 @@ class HttpRequest {
     }
   }
 
+  Future<String> get(String relativeUrl) async {
+    var response = await _get(relativeUrl);
+    if(response.statusCode == 200) {
+      return response.stream.bytesToString();
+    } else {
+      throw Exception('Failed to get $relativeUrl');
+    }
+  }
   
 
 

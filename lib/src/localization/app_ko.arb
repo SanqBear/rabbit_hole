@@ -1,0 +1,10 @@
+{
+    "@@locale": "ko",
+    "appTitle": "rabbit_hole",
+    "@appTitle": {
+      "description": "The title of the application"
+    },
+    "home": "Home",
+    "setting": "Setting"
+  }
+  
