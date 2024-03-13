@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
@@ -22,6 +23,7 @@ void main() async {
 
 // Ensure the window size is at least 360x640 on Windows
 Future<void> ensureAdjustWindowSize() async {
+  if(kIsWeb) return;
   if(Platform.isWindows) {
     await windowManager.ensureInitialized();
     WindowManager.instance.setMinimumSize(const Size(360,640));

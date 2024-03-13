@@ -33,7 +33,9 @@ class App extends StatelessWidget {
               ],
               onGenerateTitle: (BuildContext context) =>
                   AppLocalizations.of(context)!.appTitle,
-              theme: ThemeData(),
+              theme: ThemeData(
+               fontFamily: 'Pretendard',
+              ),
               darkTheme: ThemeData.dark(),
               themeMode: settingController.themeMode,
               onGenerateRoute: (RouteSettings settings) {

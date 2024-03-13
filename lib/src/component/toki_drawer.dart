@@ -71,16 +71,30 @@ class TokiDrawerItem extends StatelessWidget {
     return ListTile(
         title: GestureDetector(
           onTap: () {
-            Navigator.pushNamed(context, routeName);
+            if (ModalRoute.of(context)!.settings.name != routeName) {
+              Navigator.restorablePushNamed(context, routeName);
+            } else {
+              Navigator.pop(context);
+            }
           },
           child: Text(title),
         ),
         leading: GestureDetector(
             onTap: () {
-              Navigator.pushNamed(context, routeName);
+              if (ModalRoute.of(context)!.settings.name != routeName) {
+                Navigator.restorablePushNamed(context, routeName);
+              } else {
+                Navigator.pop(context);
+              }
             },
             child: _icon),
         selected: ModalRoute.of(context)!.settings.name == routeName,
-        onTap: () => {});
+        onTap: () {
+          if (ModalRoute.of(context)!.settings.name != routeName) {
+            Navigator.restorablePushNamed(context, routeName);
+          } else {
+            Navigator.pop(context);
+          }
+        });
   }
 }

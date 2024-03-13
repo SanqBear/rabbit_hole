@@ -4,6 +4,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'package:rabbit_hole/src/component/toki_drawer.dart';
 import 'package:rabbit_hole/src/setting/setting.dart';
+import 'package:rabbit_hole/src/util/size_handler.dart';
 
 class SettingView extends StatelessWidget {
   const SettingView({super.key, required this.settingController});
@@ -42,21 +43,41 @@ class ThemeModeSettingPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DropdownButton<ThemeMode>(
-        value: _value,
-        onChanged: (val) => _onChanged != null ? _onChanged(val) : (val) {},
-        items: [
-          DropdownMenuItem(
-              value: ThemeMode.system,
-              child: Text(AppLocalizations.of(context)!.theme_system)),
-          DropdownMenuItem(
-              value: ThemeMode.light,
-              child: Text(AppLocalizations.of(context)!.theme_light)),
-          DropdownMenuItem(
-              value: ThemeMode.dark,
-              child: Text(AppLocalizations.of(context)!.theme_dark)),
-        ],
-        underline: Container());
+    var size = SizeHandler(context);
+    return Row(
+      children: [
+        SizedBox(
+            width: size.inplaceMode == InplaceMode.landscape
+                ? size.getWidth(15)
+                : size.getWidth(20),
+            child: Text(AppLocalizations.of(context)!.theme)),
+        SizedBox(
+            width: size.inplaceMode == InplaceMode.landscape
+                ? size.getWidth(5)
+                : size.getWidth(1)),
+        Flexible(
+            fit: FlexFit.tight,
+            child: DropdownButton<ThemeMode>(
+              value: _value,
+              onChanged: (val) =>
+                  _onChanged != null ? _onChanged(val) : (val) {},
+              items: [
+                DropdownMenuItem(
+                    value: ThemeMode.system,
+                    child: Text(AppLocalizations.of(context)!.theme_system)),
+                DropdownMenuItem(
+                    value: ThemeMode.light,
+                    child: Text(AppLocalizations.of(context)!.theme_light)),
+                DropdownMenuItem(
+                    value: ThemeMode.dark,
+                    child: Text(AppLocalizations.of(context)!.theme_dark)),
+              ],
+              underline: Container(),
+              isExpanded: true,
+              focusColor: Colors.transparent,
+            )),
+      ],
+    );
   }
 }
 
@@ -70,18 +91,42 @@ class LocaleSettingPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DropdownButton<String>(
-        value: _locale ?? 'en',
-        onChanged: (val) => _onChanged != null ? _onChanged(val) : (val) {},
-        items: [
-          DropdownMenuItem(
-              value: 'en', child: Text(AppLocalizations.of(context)!.lang_en)),
-          DropdownMenuItem(
-              value: 'ja', child: Text(AppLocalizations.of(context)!.lang_ja)),
-          DropdownMenuItem(
-              value: 'ko', child: Text(AppLocalizations.of(context)!.lang_ko)),
-          DropdownMenuItem(
-              value: 'zh', child: Text(AppLocalizations.of(context)!.lang_zh))
-        ]);
+    var size = SizeHandler(context);
+    return Row(
+      children: [
+        SizedBox(
+            width: size.inplaceMode == InplaceMode.landscape
+                ? size.getWidth(15)
+                : size.getWidth(20),
+            child: Text(AppLocalizations.of(context)!.language)),
+        SizedBox(
+            width: size.inplaceMode == InplaceMode.landscape
+                ? size.getWidth(5)
+                : size.getWidth(1)),
+        Flexible(
+            fit: FlexFit.tight,
+            child: DropdownButton<String>(
+                value: _locale ?? 'en',
+                onChanged: (val) =>
+                    _onChanged != null ? _onChanged(val) : (val) {},
+                items: [
+                  DropdownMenuItem(
+                      value: 'en',
+                      child: Text(AppLocalizations.of(context)!.lang_en)),
+                  DropdownMenuItem(
+                      value: 'ja',
+                      child: Text(AppLocalizations.of(context)!.lang_ja)),
+                  DropdownMenuItem(
+                      value: 'ko',
+                      child: Text(AppLocalizations.of(context)!.lang_ko)),
+                  DropdownMenuItem(
+                      value: 'zh',
+                      child: Text(AppLocalizations.of(context)!.lang_zh))
+                ],
+                underline: Container(),
+                isExpanded: true,
+                focusColor: Colors.transparent)),
+      ],
+    );
   }
 }

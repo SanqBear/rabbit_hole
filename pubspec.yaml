@@ -35,3 +35,10 @@ flutter:
   assets:
     # Add assets from the images directory to the application.
     - assets/images/
+  
+  fonts:
+    - family: Pretendard
+      fonts:
+        - asset: assets/fonts/Pretendard-Regular.otf
+        - asset: assets/fonts/Pretendard-Bold.otf
+          weight: 700
