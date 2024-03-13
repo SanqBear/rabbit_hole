@@ -1,9 +1,18 @@
 {
   "@@locale": "ja",
-  "appTitle": "rabbit_hole",
+  "appTitle": "ウサギの巣穴",
   "@appTitle": {
     "description": "The title of the application"
   },
-  "home": "Home",
-  "setting": "Setting"
+  "home": "ホーム",
+  "setting": "設定",
+  "search": "検索",
+  "favorite": "お気に入り",
+  "theme_system": "システムのデフォルト",
+  "theme_light": "ライト",
+  "theme_dark": "ダーク",
+  "lang_en": "English",
+  "lang_zh": "中文",
+  "lang_ja": "日本語",
+  "lang_ko": "한국어"
 }

@@ -20,7 +20,14 @@ class TokiApi {
     }
   }
 
-
+  Future<String> get(String url) async {
+    var response = await _get(url);
+    if(response.statusCode == 200) {
+      return response.stream.bytesToString();
+    } else {
+      throw Exception('Failed to get $url');
+    }
+  }
 
 
 

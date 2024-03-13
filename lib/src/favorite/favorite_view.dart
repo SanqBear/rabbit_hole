@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:rabbit_hole/src/component/toki_drawer.dart';
 
-class HomeView extends StatelessWidget {
-  const HomeView({super.key});
+class FavoriteView extends StatelessWidget {
+  const FavoriteView({super.key});
 
-  static const routeName = '/';
+  static const routeName = '/favorite';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(),
         drawer: const TokiDrawer(),
-        body: const Center(child: Text('Home View..  work in progress')));
+        body: const Center(child: Text('Favorite View..  work in progress')));
   }
 }

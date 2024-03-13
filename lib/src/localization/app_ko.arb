@@ -1,10 +1,18 @@
 {
-    "@@locale": "ko",
-    "appTitle": "rabbit_hole",
-    "@appTitle": {
-      "description": "The title of the application"
-    },
-    "home": "Home",
-    "setting": "Setting"
-  }
-  
+  "@@locale": "ko",
+  "appTitle": "토끼굴",
+  "@appTitle": {
+    "description": "The title of the application"
+  },
+  "home": "홈",
+  "setting": "설정",
+  "search": "검색",
+  "favorite": "즐겨찾기",
+  "theme_system": "시스템 기본값",
+  "theme_light": "밝게",
+  "theme_dark": "어둡게",
+  "lang_en": "English",
+  "lang_zh": "中文",
+  "lang_ja": "日本語",
+  "lang_ko": "한국어"
+}

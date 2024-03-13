@@ -1,10 +1,18 @@
 {
-    "@@locale": "zh",
-    "appTitle": "rabbit_hole",
-    "@appTitle": {
-      "description": "The title of the application"
-    },
-    "home": "Home",
-    "setting": "Setting"
-  }
-  
+  "@@locale": "zh",
+  "appTitle": "兔子洞",
+  "@appTitle": {
+    "description": "The title of the application"
+  },
+  "home": "主页",
+  "setting": "环境",
+  "search": "搜索",
+  "favorite": "最喜欢的",
+  "theme_system": "系统默认值",
+  "theme_light": "浅色的",
+  "theme_dark": "黑暗的",
+  "lang_en": "English",
+  "lang_zh": "中文",
+  "lang_ja": "日本語",
+  "lang_ko": "한국어"
+}
