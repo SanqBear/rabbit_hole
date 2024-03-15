@@ -17,5 +17,10 @@
   "lang_en": "English",
   "lang_zh": "中文",
   "lang_ja": "日本語",
-  "lang_ko": "한국어"
+  "lang_ko": "한국어",
+  "set_url": "URL設定",
+  "set_url_desc": "利用するサービスのURLを設定します。",
+  "set_url_placeholder": "https://example.com",
+  "api_url": "適用URL",
+  "api_url_isempty": "URLが空です。"
 }

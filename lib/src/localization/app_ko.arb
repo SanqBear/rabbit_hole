@@ -17,5 +17,10 @@
   "lang_en": "English",
   "lang_zh": "中文",
   "lang_ja": "日本語",
-  "lang_ko": "한국어"
+  "lang_ko": "한국어",
+  "set_url": "URL 설정",
+  "set_url_desc": "사용할 서비스의 URL을 설정합니다.",
+  "set_url_placeholder": "https://example.com",
+  "api_url": "적용중인 URL",
+  "api_url_isempty": "URL이 비어 있습니다."
 }

@@ -17,5 +17,10 @@
   "lang_en": "English",
   "lang_zh": "中文",
   "lang_ja": "日本語",
-  "lang_ko": "한국어"
+  "lang_ko": "한국어",
+  "set_url": "设置网址",
+  "set_url_desc": "设置要使用的服务的 URL。",
+  "set_url_placeholder": "https://example.com",
+  "api_url": "申请网址",
+  "api_url_isempty": "网址为空。"
 }

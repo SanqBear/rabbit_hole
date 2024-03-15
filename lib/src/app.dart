@@ -7,7 +7,9 @@ import 'package:rabbit_hole/src/setting/setting_controller.dart';
 import 'package:rabbit_hole/src/views.dart';
 
 class App extends StatelessWidget {
-  const App({super.key, required this.settingController});
+  const App(
+      {super.key,
+      required this.settingController});
 
   final SettingController settingController;
 
@@ -34,7 +36,7 @@ class App extends StatelessWidget {
               onGenerateTitle: (BuildContext context) =>
                   AppLocalizations.of(context)!.appTitle,
               theme: ThemeData(
-               fontFamily: 'Pretendard',
+                fontFamily: 'Pretendard',
               ),
               darkTheme: ThemeData.dark(),
               themeMode: settingController.themeMode,
@@ -51,7 +53,9 @@ class App extends StatelessWidget {
                         case FavoriteView.routeName:
                           return const FavoriteView();
                         default:
-                          return const HomeView();
+                          return HomeView(
+                            settingController: settingController,
+                          );
                       }
                     });
               });
