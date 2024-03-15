@@ -25,9 +25,15 @@ class TokiDrawerHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const DrawerHeader(
-        decoration: BoxDecoration(color: Colors.blue),
-        child: Text('Drawer Header'));
+    return DrawerHeader(
+        decoration: const BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: <Color>[Colors.indigo, Colors.indigoAccent])),
+        child: Text(AppLocalizations.of(context)!.appTitle,
+            style: const TextStyle(
+                fontFamily: 'Pretendard', color: Colors.white, fontSize: 24)));
   }
 }
 

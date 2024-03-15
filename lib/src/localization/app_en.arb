@@ -1,6 +1,6 @@
 {
   "@@locale": "en",
-  "appTitle": "rabbit_hole",
+  "appTitle": "Rabbit Hole",
   "@appTitle": {
     "description": "The title of the application"
   },
@@ -25,5 +25,6 @@
   "api_url_isempty": "The URL is empty.",
   "reset": "Reset",
   "reset_confirm": "Are you sure you want to reset the settings?",
-  "cancel": "Cancel"
+  "cancel": "Cancel",
+  "welcome_msg": "Thank you for using the application Rabbit Hole."
 }

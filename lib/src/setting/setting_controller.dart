@@ -10,11 +10,13 @@ class SettingController with ChangeNotifier {
   late ThemeMode _themeMode;
   late String _locale;
   late bool _isApiUrlOkay = false;
+  late bool _isInitialized = false;
 
   String get apiUrl => _apiUrl;
   ThemeMode get themeMode => _themeMode;
   String get locale => _locale;
   bool get isApiUrlOkay => _isApiUrlOkay;
+  bool get isInitialized => _isInitialized;
 
   Future<void> loadSettings() async {
     _apiUrl = await _service.apiUrl();

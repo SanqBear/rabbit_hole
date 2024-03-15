@@ -1,6 +1,6 @@
 {
   "@@locale": "ja",
-  "appTitle": "ウサギの巣穴",
+  "appTitle": "ラビットホール",
   "@appTitle": {
     "description": "The title of the application"
   },
@@ -25,5 +25,6 @@
   "api_url_isempty": "URLが空です。",
   "reset": "リセット",
   "reset_confirm": "設定をリセットしてもよろしいですか?",
-  "cancel": "キャンセル"
+  "cancel": "キャンセル",
+  "welcome_msg": "アプリ『ラビットホール』をご利用いただき誠にありがとうございます。"
 }

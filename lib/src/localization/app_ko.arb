@@ -1,6 +1,6 @@
 {
   "@@locale": "ko",
-  "appTitle": "토끼굴",
+  "appTitle": "토끼집",
   "@appTitle": {
     "description": "The title of the application"
   },
@@ -25,5 +25,6 @@
   "api_url_isempty": "URL이 비어 있습니다.",
   "reset": "초기화",
   "reset_confirm": "설정을 초기화하시겠습니까?",
-  "cancel": "취소"
+  "cancel": "취소",
+  "welcome_msg": "응용프로그램 토끼집을 사용해주셔서 감사합니다"
 }

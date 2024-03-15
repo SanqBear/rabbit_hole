@@ -25,5 +25,6 @@
   "api_url_isempty": "网址为空。",
   "reset": "重置",
   "reset_confirm": "您确定要重置设置吗？",
-  "cancel": "取消"
+  "cancel": "取消",
+  "welcome_msg": "「感谢您使用」兔子洞”应用程序。"
 }
