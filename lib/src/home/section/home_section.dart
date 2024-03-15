@@ -16,6 +16,44 @@ class MainHomeSection extends StatelessWidget {
   Widget build(BuildContext context) {
     _home.init(_setting.apiUrl);
 
-    return const Center(child: Text('Home View..  work in progress'));
+    return Column(children: [RecentMangaPanel(homeController: _home)]);
+  }
+}
+
+class RecentMangaPanel extends StatelessWidget {
+  const RecentMangaPanel({super.key, required HomeController homeController})
+      : _home = homeController;
+
+  final HomeController _home;
+
+  @override
+  Widget build(BuildContext context) {
+    _home.load();
+    return Column(
+      children: [
+        Text('RECENT MANGA'),
+        const SizedBox(height: 10),
+        FutureBuilder(
+            initialData: _home.recent,
+            future: _home.loadRecent(),
+            builder: (BuildContext context, AsyncSnapshot snapshot) {
+              if (snapshot.connectionState == ConnectionState.waiting) {
+                return const CircularProgressIndicator();
+              } else if (snapshot.hasError) {
+                return Text(snapshot.error.toString());
+              } else {
+                return ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: snapshot.hasData ? snapshot.data.length : 0,
+                    itemBuilder: (BuildContext context, int index) {
+                      return ListTile(
+                        title: Text(snapshot.data[index].title),
+                        subtitle: Text(snapshot.data[index].updatedAt),
+                      );
+                    });
+              }
+            }),
+      ],
+    );
   }
 }
