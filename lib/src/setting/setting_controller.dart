@@ -26,7 +26,7 @@ class SettingController with ChangeNotifier {
   Future<void> updateApiUrl(String newUrl) async {
     String newApiUrl = await _service.fetchApiUrl(newUrl);
 
-    if (newApiUrl == _apiUrl) { 
+    if (newApiUrl == _apiUrl) {
       _isApiUrlOkay = await _service.checkApiUrl(_apiUrl);
       return;
     }
@@ -58,5 +58,16 @@ class SettingController with ChangeNotifier {
     notifyListeners();
 
     await _service.updateLocale(newLocale);
+  }
+
+  Future<void> reset() async {
+    _apiUrl = '';
+    _themeMode = ThemeMode.system;
+    _locale = 'en';
+    _isApiUrlOkay = false;
+
+    await _service.clear();
+
+    notifyListeners();
   }
 }

@@ -15,27 +15,50 @@ class SettingView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var size = SizeHandler(context);
     return Scaffold(
         appBar: AppBar(),
         drawer: const TokiDrawer(),
         body: Padding(
-            padding: const EdgeInsets.all(16),
+            padding: const EdgeInsets.all(20.0),
             child: Column(children: [
               ThemeModeSettingPanel(
                   value: settingController.themeMode,
                   onChanged: settingController.updateThemeMode),
-              SizedBox(height: size.getHeight(3)),
+              const SizedBox(height: 10),
               LocaleSettingPanel(
                 value: settingController.locale,
                 onChanged: settingController.updateLocale,
               ),
-              SizedBox(height: size.getHeight(3)),
+              const SizedBox(height: 10),
               ApiUrlSettingPanel(onSubmitted: settingController.updateApiUrl),
-              SizedBox(height: size.getHeight(3)),
+              const SizedBox(height: 10),
               ApiUrlConfirmPanel(
                   url: settingController.apiUrl,
-                  isOkay: settingController.isApiUrlOkay)
+                  isOkay: settingController.isApiUrlOkay),
+              const SizedBox(height: 36),
+              ResetSettingPanel(onPressed: () {
+                showDialog(
+                    context: context,
+                    builder: (ctx) {
+                      return AlertDialog(
+                        title: Text(AppLocalizations.of(context)!.reset),
+                        content:
+                            Text(AppLocalizations.of(context)!.reset_confirm),
+                        actions: [
+                          TextButton(
+                              onPressed: () => Navigator.of(context).pop(),
+                              child:
+                                  Text(AppLocalizations.of(context)!.cancel)),
+                          TextButton(
+                              onPressed: () => {
+                                    settingController.reset(),
+                                    Navigator.of(context).pop()
+                                  },
+                              child: Text(AppLocalizations.of(context)!.reset))
+                        ],
+                      );
+                    });
+              })
             ])));
   }
 }
@@ -201,10 +224,30 @@ class ApiUrlConfirmPanel extends StatelessWidget {
             width: size.inplaceMode == InplaceMode.landscape
                 ? size.getWidth(5)
                 : size.getWidth(1)),
-        Text(_url ?? AppLocalizations.of(context)!.api_url_isempty),
+        Text(_url?.isEmpty ?? true
+            ? AppLocalizations.of(context)!.api_url_isempty
+            : _url!),
         _isOkay == true
             ? const Icon(Icons.check, color: Colors.green)
             : const Icon(Icons.close, color: Colors.red),
+      ],
+    );
+  }
+}
+
+class ResetSettingPanel extends StatelessWidget {
+  const ResetSettingPanel({super.key, Function? onPressed})
+      : _onPressed = onPressed;
+
+  final Function? _onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        ElevatedButton(
+            onPressed: () => _onPressed != null ? _onPressed() : () {},
+            child: Text(AppLocalizations.of(context)!.reset)),
       ],
     );
   }

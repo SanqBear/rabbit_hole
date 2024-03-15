@@ -49,4 +49,8 @@ class SettingService {
   Future<void> updateThemeMode(ThemeMode themeMode) async {
     await _sharedPreferences.setInt('themeMode', themeMode.index);
   }
+
+  Future<void> clear() async {
+    await _sharedPreferences.clear();
+  }
 }

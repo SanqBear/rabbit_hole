@@ -22,5 +22,8 @@
   "set_url_desc": "设置要使用的服务的 URL。",
   "set_url_placeholder": "https://example.com",
   "api_url": "申请网址",
-  "api_url_isempty": "网址为空。"
+  "api_url_isempty": "网址为空。",
+  "reset": "重置",
+  "reset_confirm": "您确定要重置设置吗？",
+  "cancel": "取消"
 }

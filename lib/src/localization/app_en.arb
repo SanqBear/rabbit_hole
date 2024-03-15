@@ -22,5 +22,8 @@
   "set_url_desc": "Set the URL of the service to be used.",
   "set_url_placeholder": "https://example.com",
   "api_url": "Applied URL",
-  "api_url_isempty": "The URL is empty."
+  "api_url_isempty": "The URL is empty.",
+  "reset": "Reset",
+  "reset_confirm": "Are you sure you want to reset the settings?",
+  "cancel": "Cancel"
 }

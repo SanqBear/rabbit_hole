@@ -22,5 +22,8 @@
   "set_url_desc": "利用するサービスのURLを設定します。",
   "set_url_placeholder": "https://example.com",
   "api_url": "適用URL",
-  "api_url_isempty": "URLが空です。"
+  "api_url_isempty": "URLが空です。",
+  "reset": "リセット",
+  "reset_confirm": "設定をリセットしてもよろしいですか?",
+  "cancel": "キャンセル"
 }
